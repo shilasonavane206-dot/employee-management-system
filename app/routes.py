@@ -5,7 +5,7 @@ from app.models import Employee
 
 @app.route("/")
 def home():
-    return "Employee Management System - basic program to manage employees in a company. Use the API endpoints to perform CRUD operations on employee data."
+    return "Employee Management System"
 
 
 # GET ALL EMPLOYEES
