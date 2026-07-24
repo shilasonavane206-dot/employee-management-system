@@ -5,7 +5,7 @@ from app.models import Employee
 
 @app.route("/")
 def home():
-    return "Employee Management System v3"
+    return "<h1>Employee Management System v3</h1><p>Welcome to the Employee Management System API</p>"
 
 
 # GET ALL EMPLOYEES
