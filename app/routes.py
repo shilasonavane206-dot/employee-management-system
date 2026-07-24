@@ -5,7 +5,7 @@ from app.models import Employee
 
 @app.route("/")
 def home():
-    return "Employee Management System"
+    return "Employee Management System v3"
 
 
 # GET ALL EMPLOYEES
