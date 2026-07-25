@@ -7,6 +7,12 @@ from app.models import Employee
 def home():
     return "<h1>Employee Management System v3</h1><p>Welcome to the Employee Management System API</p>"
 
+@app.route("/health", methods=["GET"])
+def health():
+    return {
+        "status": "UP",
+        "database": "Connected"
+    }, 200
 
 # GET ALL EMPLOYEES
 @app.route("/employees", methods=["GET"])
