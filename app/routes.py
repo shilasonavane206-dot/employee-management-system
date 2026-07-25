@@ -11,6 +11,7 @@ def home():
 def health():
     return {
         "status": "UP",
+        "application": "Employee Management System",
         "database": "Connected"
     }, 200
 
