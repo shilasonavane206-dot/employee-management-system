@@ -19,31 +19,32 @@ services:
     networks:
       - ems_network
 
-blue_app:
-  build: .
-  container_name: ems_blue_app
-ports:
-    - "5001:5000"
-environment:
-    DB_HOST: db
-    FLASK_ENV: production
-depends_on:
-    db:
-      condtion: service_healthy
+  blue_app:
+    build: .
+    container_name: ems_blue_app
+    ports:
+        - "5001:5000"
+    environment:
+        DB_HOST: db
+        FLASK_ENV: production
+    depends_on:
+      db:
+        condition: service_healthy
+    
     networks:
       - ems_network
 
-green_app:
-  build: .
-  container_namme: ems_green_app
-  ports:
-    - "5002:5000"
-  environment:
-    DB_hOST: db
-    FLASK_ENV: production
-  depends_on:
-    db:
-      condition: service_healthy
+  green_app:
+    build: .
+    container_name: ems_green_app
+    ports:
+      - "5002:5000"
+    environment:
+      DB_HOST: db
+      FLASK_ENV: production
+    depends_on:
+      db:
+        condition: service_healthy
     networks:
       - ems_network
 
