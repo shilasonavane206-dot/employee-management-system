@@ -20,3 +20,21 @@ fi
 
 echo "Current Environment : $CURRENT"
 echo "Next Environment    : $NEXT"
+
+# Start next environment
+
+if [ "$NEXT" = "green" ]; then
+
+    echo "Starting Green container..."
+
+    docker build -t employee-management-system:latest .
+
+    docker run -d \
+      --name ems_green_app \
+      --network employee-management-system_ems_network \
+      -p 5002:5000 \
+      -e DB_HOST=db \
+      -e FLASK_ENV=production \
+      employee-management-system:latest
+
+fi
