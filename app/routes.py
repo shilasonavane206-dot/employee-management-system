@@ -8,7 +8,7 @@ def home():
     return "<h1>Employee Management System V4</h1><p>Welcome to the Employee Management System API</p>"
 
 @app.route("/health", methods=["GET"])
-def health(),
+def health():
     return {
         "status": "UP",
         "application": "Employee Management System",
