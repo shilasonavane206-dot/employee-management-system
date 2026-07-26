@@ -28,8 +28,6 @@ jobs:
 
             git pull origin main
 
-            docker compose down || true
+            chmod +x deploy.sh
 
-            docker compose up -d --build
-
-            docker ps
+            ./deploy.sh
