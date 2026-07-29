@@ -114,7 +114,10 @@ else
 fi
 
 
-
 echo "Deployment completed successfully"
 
 echo "Active Environment: $NEXT"
+
+echo "Cleaning old unused images..."
+
+docker image prune -f
