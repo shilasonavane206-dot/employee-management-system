@@ -1,5 +1,6 @@
 from app import db
 
+
 class Employee(db.Model):
     __tablename__ = "employees"
 
@@ -15,5 +16,5 @@ class Employee(db.Model):
             "name": self.name,
             "email": self.email,
             "department": self.department,
-            "salary": self.salary
+            "salary": self.salary,
         }

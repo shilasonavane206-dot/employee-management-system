@@ -7,13 +7,15 @@ from app.models import Employee
 def home():
     return "<h1>Employee Management System V5</h1><p>Welcome to the Employee Management System API</p>"
 
+
 @app.route("/health", methods=["GET"])
 def health():
     return {
         "status": "UP",
         "application": "Employee Management System",
-        "database": "Connected"
+        "database": "Connected",
     }, 200
+
 
 # GET ALL EMPLOYEES
 @app.route("/employees", methods=["GET"])
@@ -38,7 +40,7 @@ def create_employee():
         name=data["name"],
         email=data["email"],
         department=data["department"],
-        salary=data["salary"]
+        salary=data["salary"],
     )
 
     db.session.add(employee)
@@ -72,6 +74,4 @@ def delete_employee(emp_id):
     db.session.delete(employee)
     db.session.commit()
 
-    return jsonify({
-        "message": "Employee deleted successfully"
-    })
+    return jsonify({"message": "Employee deleted successfully"})
