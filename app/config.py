@@ -4,7 +4,7 @@ import os
 class Config:
     SECRET_KEY = "employee-management-system-2026"
 
-    # Use environment variable for database host (default to 'db' for Docker, 'localhost' for local)
+    # Database host configuration
     DB_HOST = os.getenv("DB_HOST", "host.docker.internal")
 
     SQLALCHEMY_DATABASE_URI = (

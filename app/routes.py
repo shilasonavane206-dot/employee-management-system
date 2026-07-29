@@ -1,11 +1,15 @@
 from flask import jsonify, request
+
 from app import app, db
 from app.models import Employee
 
 
 @app.route("/")
 def home():
-    return "<h1>Employee Management System V5</h1><p>Welcome to the Employee Management System API</p>"
+    return (
+        "<h1>Employee Management System V5</h1>"
+        "<p>Welcome to the Employee Management System API</p>"
+    )
 
 
 @app.route("/health", methods=["GET"])

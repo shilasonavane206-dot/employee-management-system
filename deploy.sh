@@ -5,7 +5,6 @@ echo "Employee Management System Deployment"
 echo "========================================"
 
 NGINX_CONFIG="/etc/nginx/sites-available/default"
-IMAGE_NAME="employee-management-system:latest"
 NETWORK_NAME="employee-management-system_ems_network"
 
 
@@ -33,8 +32,8 @@ echo "Current Environment : $CURRENT"
 echo "Next Environment    : $NEXT"
 echo "Next Port           : $NEXT_PORT"
 
-
 echo "Building Docker image..."
+IMAGE_NAME="ems-${NEXT}:v1.0.0"
 
 docker build -t $IMAGE_NAME .
 

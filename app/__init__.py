@@ -1,7 +1,8 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from app.config import Config
 from prometheus_flask_exporter import PrometheusMetrics
+
+from app.config import Config
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -11,4 +12,4 @@ metrics = PrometheusMetrics(app)
 
 db = SQLAlchemy(app)
 
-from app import routes
+from app import routes  # noqa: F401, E402
